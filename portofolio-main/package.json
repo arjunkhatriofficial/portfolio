@@ -1,17 +1,17 @@
 {
   "name": "portfolio",
-  "homepage": "https://Littlestrangers.github.io/portfolio",
+  "homepage": "https://arjunkhatriofficial.github.io/portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-},
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@react-three/drei": "^10.6.1",
     "@react-three/fiber": "^9.3.0",
