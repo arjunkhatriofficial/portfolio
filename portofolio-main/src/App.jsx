@@ -72,13 +72,13 @@ function App() {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
+        <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 gap-6 md:gap-10">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
-            <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
+            <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit max-w-full p-4 rounded-2xl">
               <img src="./assets/me1.png" className="w-10 rounded-md" />
               <q>AI is the brush the designer is the artist.</q>
             </div>
-            <h1 className="text-5xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <ShinyText text="Hi I'm Arjun Khatri" disabled={false} speed={3} className='custom-class' />
             </h1>
             <BlurText
@@ -88,7 +88,7 @@ function App() {
               direction="top"
               className=" mb-6"
             />
-            <div className="flex items-center sm:gap-4 gap-2">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a 
                 href="./assets/CV.pdf" 
                 download="Faris_Edrik_Prayoga_CV.pdf" 
@@ -103,7 +103,7 @@ function App() {
             </div>
 
           </div>
-          <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
+          <div className="md:ml-auto flex justify-center md:justify-end animate__animated animate__fadeInUp animate__delay-4s">
             <ProfileCard
               name="Arjun Khatri"
               title="GenAI Developer"
@@ -121,7 +121,7 @@ function App() {
           </div>
         </div>
         {/* tentang */}
-        <div className="mt-16 mx-auto w-full max-w-4xl md:max-w-6xl rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
+        <div className="mt-16 mx-auto w-full max-w-4xl md:max-w-6xl rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-4 sm:p-6" id="about">
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 px-2 sm:px-6" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
               {/* Kolom kiri */}
@@ -178,7 +178,7 @@ function App() {
         </div>
         <div className="tools mt-32">
           <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
+          <p className="w-full md:w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
             {listTools.map((tool) => (
@@ -251,7 +251,7 @@ function App() {
           {/* Container dua kolom */}
           <div className="flex flex-col md:flex-row gap-8">
             {/* Chat Room di kiri */}
-            <div className="flex-1 bg-zinc-800 p-6 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+            <div className="flex-1 bg-zinc-800 p-4 sm:p-6 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
               <ChatRoom />
             </div>
 
@@ -260,7 +260,7 @@ function App() {
               <form
                 action="https://formsubmit.co/arjunkhatri925@gmail.com"
                 method="POST"
-                className="bg-zinc-800 p-10 w-full rounded-md"
+                className="bg-zinc-800 p-6 sm:p-10 w-full rounded-md"
                 autoComplete="off"
                 data-aos="fade-up"
                 data-aos-duration="1000"
