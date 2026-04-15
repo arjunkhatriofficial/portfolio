@@ -1,61 +1,108 @@
-# Portofolio Web — [Faris Edrik P / rissss21]
+<h1 align="center">Hi 👋, I'm Arjun Khatri</h1>
+<h3 align="center">Frontend & Gen AI Developer | Building Modern Web Experiences</h3>
+<p align="center">
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmU3dXE5Yzc4ZG02MnEzZGpua3k3dXg2YjdiaXVuMmltNHI4NHhscyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iIqmM5tTjmpOB9mpbn/giphy.gif" width="100%" />
+</p>
 
-Selamat datang di portfolio web pribadi saya! 🌐  
-Dibuat dengan React + Vite, ini adalah showcase dari project, skill, dan karya yang ingin saya bagikan.
 
-##  Struktur Project
 
-- `public/` — file statis (favicon, assets, dsb.)  
-- `src/` — code utama React (komponen, utilitas, dsb.)  
-- `index.html` — entry point halaman web  
-- `package.json` & `package-lock.json` — manajemen dependencies dan script  
-- `vite.config.js` — konfigurasi build dan dev server Vite  
-- `eslint.config.js` — aturan linting agar kodenya tetap bersih dan konsisten  
+# 🚀 Web Portfolio — Arjun Khatri
 
-##  Fitur Utama
-
-- Dibangun dengan **React + Vite** — ringan, cepat reload, dan performa build optimal  
-- **ESLint** telah terkonfigurasi agar coding style tetap rapi  
-- Struktur modular dan siap dikembangkan—bisa ditambahkan halaman “About”, “Projects”, dsb.
-
-##  Cara Jalankan
-
-1. Clone repository ini:
-```bash
-git clone https://github.com/rissss21/portofolio.git
-cd portfolio
-````
-
-2. Install dependencies:
-```bash
-npm install
-````
-
-3. Jalankan server lokal dengan hot reload:
-```bash
-npm run dev
-````
-
-4. Buat versi production:
-```bash
-npm run build
-````
-
-## &#x20;Quick Preview
-
-Jika sudah di-deploy (contoh: GitHub Pages, Netlify, Vercel), kamu bisa tambahkan link deploy di sini, misalnya:
-[🔗 Lihat versi live](https://username.github.io/portofolio/)
-
-## Tentang Saya
-
-Hai, saya Faris Edrik P (username GitHub: `rissss21`).
-Saya seorang Developer yang suka bikin aplikasi web ringan dengan tampilan modern dan performa tinggi. Scroll aja di project saya, dan jangan sungkan untuk reach out kalau ada pertanyaan!
-
-* **Email:** [email\_farisedrik21@gmail.com](mailto:email_farisedrik21@gmail.com)
-* **LinkedIn:** [linkedin.com/in/farisedp](https://www.linkedin.com/in/farisedp/)
-* **Instagram:** @farisedrikprayoga
+Welcome to my personal web portfolio! 🌐  
+Built with **React + Vite**, this project showcases my work, skills, and passion for creating modern, high-performance web applications.
 
 ---
 
+## 🌟 About This Project  
 
-[1]: https://github.com/rissss21/portofolio "GitHub - rissss21/portofolio"
+This portfolio is designed to highlight:
+- Clean and modern UI/UX 🎨  
+- Fast and optimized performance ⚡  
+- Scalable and modular structure 🧩  
+
+It reflects my approach to building **efficient, visually appealing, and user-friendly web applications**.
+
+---
+
+## 📂 Project Structure  
+
+```bash
+public/            # Static files (favicon, assets, etc.)
+src/               # React core code (components, utilities, etc.)
+index.html         # Entry point of the web app
+package.json       # Dependencies and scripts
+package-lock.json  # Dependency lock file
+vite.config.js     # Vite configuration
+eslint.config.js   # Linting rules
+```
+
+---
+
+## ✨ Key Features  
+
+- ⚛️ Built with React + Vite  
+- ⚡ Fast reload and optimized build performance  
+- 🎨 Clean and modern design  
+- 🧩 Modular and scalable structure  
+- 🧹 ESLint configured for clean and consistent code  
+- 📱 Ready to expand (About, Projects, Contact, etc.)
+
+---
+
+## ⚙️ How to Run  
+
+Clone the repository:
+```bash
+git clone https://github.com/ArjunKhatrioffcial/portfolio.git
+cd portofolio
+```
+
+Install dependencies:
+```bash
+npm install
+```
+
+Run development server:
+```bash
+npm run dev
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+---
+
+## 🌐 Live Preview  
+
+👉 https://arjunkhatrioffcial.github.io/portfolio/
+
+---
+
+## 👨‍💻 About Me  
+
+Hi, I'm **Arjun Khatri** 👋  
+
+I’m a **Frontend & Gen AI Developer** passionate about building **modern, high-performance, and intelligent web applications**. I enjoy combining clean UI/UX design with the power of AI to create interactive and meaningful digital experiences.
+
+With a strong foundation in React and modern development tools, I focus on developing applications that are not only visually engaging but also smart, efficient, and user-centric.
+
+I continuously explore new technologies, especially in **Generative AI**, to build solutions that solve real-world problems and push the boundaries of what web applications can do.
+
+🚀 Always open to opportunities, collaborations, and innovative projects.
+
+---
+
+## 📬 Contact  
+
+- 📧 Email: arjunkhatri925@gmail.com  
+- 💼 LinkedIn: https://www.linkedin.com/in/arjunkhatriofficial/  
+- 📸 Instagram: https://www.instagram.com/2007.20.2007/
+- 🐙 Github : https://github.com/ArjunKhatrioffcial
+
+---
+
+## ⭐ Support  
+
+If you like this project, feel free to give it a ⭐ on GitHub!
