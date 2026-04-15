@@ -72,7 +72,7 @@ function App() {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-       <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 gap-6 md:gap-10">
+        <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
               <img src="./assets/me1.png" className="w-10 rounded-md" />
@@ -121,8 +121,8 @@ function App() {
           </div>
         </div>
         {/* tentang */}
-        <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <div className="mt-16 mx-auto w-full max-w-4xl md:max-w-6xl rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 px-2 sm:px-6" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
               {/* Kolom kiri */}
               <div className="flex-1 text-left">
@@ -135,7 +135,7 @@ function App() {
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-base md:text-lg leading-relaxed mb-10 text-gray-300"
+                  className="text-sm sm:text-base md:text-lg leading-relaxed mb-6 text-gray-300"
                 />
 
                 <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
@@ -170,7 +170,7 @@ function App() {
             </div>
 
             {/* Kolom kanan */}
-            <div className="basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full flex justify-center ">
+            <div className="w-full md:w-5/12 flex justify-center overflow-hidden">
               <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
             </div>
           </div>
@@ -267,7 +267,8 @@ function App() {
                 data-aos-delay="500"
                 data-aos-once="true"
               >
-                   <input type="hidden" name="_captcha" value="false" />
+                 
+  <input type="hidden" name="_captcha" value="false" />
 
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
