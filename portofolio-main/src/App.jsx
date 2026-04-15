@@ -90,7 +90,7 @@ function App() {
             />
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a 
-  href="/portfolio/portofolio-main/public/assets/Resume1.pdf" 
+  href="/portfolio/portfolio-main/public/assets/Resume1.pdf" 
   download="Arjun_Khatri_Resume.pdf"
   className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
 >
