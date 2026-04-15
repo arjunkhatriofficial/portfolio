@@ -1,6 +1,6 @@
 # Portofolio Web — [Faris Edrik P / rissss21]
 
-Selamat datang di portofolio web pribadi saya! 🌐  
+Selamat datang di portfolio web pribadi saya! 🌐  
 Dibuat dengan React + Vite, ini adalah showcase dari project, skill, dan karya yang ingin saya bagikan.
 
 ##  Struktur Project
@@ -23,7 +23,7 @@ Dibuat dengan React + Vite, ini adalah showcase dari project, skill, dan karya y
 1. Clone repository ini:
 ```bash
 git clone https://github.com/rissss21/portofolio.git
-cd portofolio
+cd portfolio
 ````
 
 2. Install dependencies:
