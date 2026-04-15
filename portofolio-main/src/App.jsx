@@ -267,8 +267,7 @@ function App() {
                 data-aos-delay="500"
                 data-aos-once="true"
               >
-                 <input type="hidden" name="_next" value="https://arjunkhatrioffcial.github.io/portfolio/" />
-                  <input type="hidden" name="_captcha" value="false" />
+                   <input type="hidden" name="_captcha" value="false" />
 
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
