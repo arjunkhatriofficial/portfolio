@@ -90,8 +90,8 @@ function App() {
             />
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a 
-                href="./assets/CV.pdf" 
-                download="Faris_Edrik_Prayoga_CV.pdf" 
+                href="./assets/CV1.pdf" 
+                download="Arjun_Khatri_CV1.pdf" 
                 className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
               >
                 <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
