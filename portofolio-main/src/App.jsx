@@ -8,19 +8,20 @@ import Lanyard from "./components/Lanyard/Lanyard";
 import GlassIcons from "./components/GlassIcons/GlassIcons";
 import { listTools, listProyek } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
-import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT MODAL
+import ProjectModal from "./components/ProjectModal/ProjectModal";
 import Aurora from "./components/Aurora/Aurora";
-import AOS from 'aos';
+import AOS from "aos";
 import ChatRoom from "./components/ChatRoom";
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import "aos/dist/aos.css";
 // ..
 AOS.init();
 
 function App() {
   const aboutRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-
-  const [selectedProject, setSelectedProject] = useState(null); // null = modal tertutup
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [sending, setSending] = useState(false);
+  const [statusMsg, setStatusMsg] = useState("");
 
   const handleProjectClick = (project) => {
     setSelectedProject(project);
@@ -29,14 +30,12 @@ function App() {
   const handleCloseModal = () => {
     setSelectedProject(null);
   };
-  // -------------------------
 
   useEffect(() => {
     const isReload =
       performance.getEntriesByType("navigation")[0]?.type === "reload";
 
     if (isReload) {
-      // Ambil path tanpa hash
       const baseUrl = window.location.origin + "/portfolio/";
       window.location.replace(baseUrl);
     }
@@ -60,6 +59,42 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setStatusMsg("");
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/arjunkhatri925@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatusMsg("Message sent successfully!");
+        e.target.reset();
+      } else {
+        setStatusMsg("Something went wrong. Please try again.");
+        console.log(data);
+      }
+    } catch (error) {
+      setStatusMsg("Failed to send. Check your internet and try again.");
+      console.log(error);
+    }
+
+    setSending(false);
+  };
+
   return (
     <>
       <div className="absolute top-0 left-0 w-full h-full -z-10 ">
@@ -71,7 +106,6 @@ function App() {
         />
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="hero grid grid-cols-1 md:grid-cols-2 items-center pt-10 gap-6 md:gap-10">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit max-w-full p-4 rounded-2xl">
@@ -79,7 +113,12 @@ function App() {
               <q>AI is the brush the designer is the artist.</q>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              <ShinyText text="Hi I'm Arjun Khatri" disabled={false} speed={3} className='custom-class' />
+              <ShinyText
+                text="Hi I'm Arjun Khatri"
+                disabled={false}
+                speed={3}
+                className="custom-class"
+              />
             </h1>
             <BlurText
               text="Passionate GenAI Developer crafting modern digital experiences. I specialize in integrating generative models into full-stack web solutions, turning innovative AI logic into seamless, high-performance user tools."
@@ -89,20 +128,33 @@ function App() {
               className=" mb-6"
             />
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-              <a 
- href={`${import.meta.env.BASE_URL}assets/Resume1.pdf`}
-  download="Arjun_Khatri_Resume.pdf"
-  className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
->
-  <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
-</a>
+              <a
+                href={`${import.meta.env.BASE_URL}assets/Resume1.pdf`}
+                download="Arjun_Khatri_Resume.pdf"
+                className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
+              >
+                <ShinyText
+                  text="Download CV"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                />
+              </a>
 
-              <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
-                <ShinyText text="Explore My Projects" disabled={false} speed={3} className="custom-class" />
+              <a
+                href="#project"
+                className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
+              >
+                <ShinyText
+                  text="Explore My Projects"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                />
               </a>
             </div>
-
           </div>
+
           <div className="md:ml-auto flex justify-center md:justify-end animate__animated animate__fadeInUp animate__delay-4s">
             <ProfileCard
               name="Arjun Khatri"
@@ -115,16 +167,26 @@ function App() {
               enableTilt={true}
               enableMobileTilt={false}
               onContactClick={() => {
-  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-}}
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             />
           </div>
         </div>
+
         {/* tentang */}
-        <div className="mt-16 mx-auto w-full max-w-4xl md:max-w-6xl rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-4 sm:p-6" id="about">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 px-2 sm:px-6" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+        <div
+          className="mt-16 mx-auto w-full max-w-4xl md:max-w-6xl rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-4 sm:p-6"
+          id="about"
+        >
+          <div
+            className="flex flex-col md:flex-row items-center gap-6 md:gap-10 px-2 sm:px-6"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
-              {/* Kolom kiri */}
               <div className="flex-1 text-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
                   About Me
@@ -151,14 +213,18 @@ function App() {
                     </h1>
                     <p>Years of Experience</p>
                   </div>
-                  <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="600"
+                    data-aos-once="true"
+                  >
                     <h1 className="text-3xl md:text-4xl mb-1">
                       3.40<span className="text-violet-500">/4.00</span>
                     </h1>
                     <p>GPA</p>
                   </div>
                 </div>
-
 
                 <ShinyText
                   text="Working with heart, creating with mind."
@@ -169,21 +235,38 @@ function App() {
               </div>
             </div>
 
-            {/* Kolom kanan */}
             <div className="w-full md:w-5/12 flex justify-center overflow-hidden">
               <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
             </div>
           </div>
-
         </div>
-        <div className="tools mt-32">
-          <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-full md:w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
-          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
+        <div className="tools mt-32">
+          <h1
+            className="text-4xl/snug font-bold mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
+            Tools & Technologies
+          </h1>
+          <p
+            className="w-full md:w-2/5 text-base/loose opacity-50"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+            data-aos-once="true"
+          >
+            My Profesional Skills
+          </p>
+          <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {listTools.map((tool) => (
               <div
-                key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true"
+                key={tool.id}
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay={tool.dad}
+                data-aos-once="true"
                 className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
               >
                 <img
@@ -206,18 +289,44 @@ function App() {
             ))}
           </div>
         </div>
-        {/* tentang */}
 
         {/* Proyek */}
-        <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
-        <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
-        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
-        <div className="proyek-box mt-14" >
-
-          <div style={{ height: 'auto', position: 'relative' }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true" >
+        <div
+          className="proyek mt-32 py-10"
+          id="project"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        ></div>
+        <h1
+          className="text-center text-4xl font-bold mb-2"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
+          Project
+        </h1>
+        <p
+          className="text-base/loose text-center opacity-50"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="300"
+          data-aos-once="true"
+        >
+          Showcasing a selection of projects that reflect my skills, creativity,
+          and passion for building meaningful digital experiences.
+        </p>
+        <div className="proyek-box mt-14">
+          <div
+            style={{ height: "auto", position: "relative" }}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+            data-aos-once="true"
+          >
             <ChromaGrid
               items={listProyek}
-              onItemClick={handleProjectClick} // Kirim fungsi untuk handle klik
+              onItemClick={handleProjectClick}
               radius={500}
               damping={0.45}
               fadeOut={0.6}
@@ -225,8 +334,6 @@ function App() {
             />
           </div>
         </div>
-        {/* Proyek */}
-
 
         {/* Kontak */}
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
@@ -248,36 +355,29 @@ function App() {
             Get in touch with me or chat in real-time
           </p>
 
-          {/* Container dua kolom */}
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Chat Room di kiri */}
-            <div className="flex-1 bg-zinc-800 p-4 sm:p-6 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+            <div
+              className="flex-1 bg-zinc-800 p-4 sm:p-6 rounded-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+              data-aos-once="true"
+            >
               <ChatRoom />
             </div>
 
-            {/* Contact Form di kanan */}
             <div className="flex-1">
-  <form
-  action="https://formsubmit.co/arjunkhatri925@gmail.com"
-  method="POST"
-  className="bg-zinc-800 p-6 sm:p-10 w-full rounded-md"
-  autoComplete="off"
-  data-aos="fade-up"
-  data-aos-duration="1000"
-  data-aos-delay="500"
-  data-aos-once="true"
->
-  <input type="hidden" name="_captcha" value="false" />
-  <input
-    type="hidden"
-    name="_next"
-    value="https://arjunkhatrioffcial.github.io/portfolio/"
-  />
-  <input
-    type="hidden"
-    name="_url"
-    value="https://arjunkhatrioffcial.github.io/portfolio/"
-  />
+              <form
+                onSubmit={handleSubmit}
+                className="bg-zinc-800 p-6 sm:p-10 w-full rounded-md"
+                autoComplete="off"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="500"
+                data-aos-once="true"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
 
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
@@ -290,6 +390,7 @@ function App() {
                       required
                     />
                   </div>
+
                   <div className="flex flex-col gap-2">
                     <label className="font-semibold">Email</label>
                     <input
@@ -300,8 +401,11 @@ function App() {
                       required
                     />
                   </div>
+
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="font-semibold">Message</label>
+                    <label htmlFor="message" className="font-semibold">
+                      Message
+                    </label>
                     <textarea
                       name="message"
                       id="message"
@@ -312,20 +416,32 @@ function App() {
                       required
                     ></textarea>
                   </div>
+
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors"
+                      disabled={sending}
+                      className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors disabled:opacity-50"
                     >
-                      <ShinyText text="Send" disabled={false} speed={3} className="custom-class" />
+                      <ShinyText
+                        text={sending ? "Sending..." : "Send"}
+                        disabled={false}
+                        speed={3}
+                        className="custom-class"
+                      />
                     </button>
                   </div>
+
+                  {statusMsg && (
+                    <p className="text-center text-sm text-green-400">
+                      {statusMsg}
+                    </p>
+                  )}
                 </div>
               </form>
             </div>
           </div>
         </div>
-        {/* Kontak */}
       </main>
 
       <ProjectModal
@@ -334,7 +450,7 @@ function App() {
         project={selectedProject}
       />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
