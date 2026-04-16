@@ -53,13 +53,10 @@ eslint.config.js   # Linting rules
 
 Clone the repository:
 ```bash
-<<<<<<< HEAD
+
 git clone https://github.com/arjunKhatriofficial/portfolio.git
 cd portfolio
-=======
-git clone https://github.com/arjunKhatriofficial/portfolio.git
-cd portofolio
->>>>>>> 450e370 (Update parent README)
+
 ```
 
 Install dependencies:
