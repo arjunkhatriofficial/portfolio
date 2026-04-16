@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arjunkhatrioffcial.github.io/portfolio/sitemap.xml
+Sitemap: https://arjunkhatriofficial.github.io/portfolio/sitemap.xml
