@@ -258,21 +258,26 @@ function App() {
             {/* Contact Form di kanan */}
             <div className="flex-1">
   <form
-    action="https://formsubmit.co/arjunkhatri925@gmail.com"
-    method="POST"
-    className="bg-zinc-800 p-6 sm:p-10 w-full rounded-md"
-    autoComplete="off"
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-delay="500"
-    data-aos-once="true"
-  >
-    <input type="hidden" name="_captcha" value="false" />
-    <input
-      type="hidden"
-      name="_next"
-      value="https://arjunkhatrioffcial.github.io/portfolio/#contact"
-    />
+  action="https://formsubmit.co/arjunkhatri925@gmail.com"
+  method="POST"
+  className="bg-zinc-800 p-6 sm:p-10 w-full rounded-md"
+  autoComplete="off"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+  data-aos-delay="500"
+  data-aos-once="true"
+>
+  <input type="hidden" name="_captcha" value="false" />
+  <input
+    type="hidden"
+    name="_next"
+    value="https://arjunkhatrioffcial.github.io/portfolio/"
+  />
+  <input
+    type="hidden"
+    name="_url"
+    value="https://arjunkhatrioffcial.github.io/portfolio/"
+  />
 
                 <div className="flex flex-col gap-6">
                   <div className="flex flex-col gap-2">
