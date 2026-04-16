@@ -53,8 +53,13 @@ eslint.config.js   # Linting rules
 
 Clone the repository:
 ```bash
-git clone https://github.com/ArjunKhatrioffcial/portfolio.git
+<<<<<<< HEAD
+git clone https://github.com/arjunKhatriofficial/portfolio.git
 cd portfolio
+=======
+git clone https://github.com/arjunKhatriofficial/portfolio.git
+cd portofolio
+>>>>>>> 450e370 (Update parent README)
 ```
 
 Install dependencies:
@@ -76,7 +81,7 @@ npm run build
 
 ## 🌐 Live Preview  
 
-👉 https://arjunkhatrioffcial.github.io/portfolio/
+👉 https://arjunkhatriofficial.github.io/portfolio/
 
 ---
 
@@ -99,7 +104,7 @@ I continuously explore new technologies, especially in **Generative AI**, to bui
 - 📧 Email: arjunkhatri925@gmail.com  
 - 💼 LinkedIn: https://www.linkedin.com/in/arjunkhatriofficial/  
 - 📸 Instagram: https://www.instagram.com/2007.20.2007/
-- 🐙 Github : https://github.com/ArjunKhatrioffcial
+- 🐙 Github : https://github.com/arjunKhatriofficial
 
 ---
 
